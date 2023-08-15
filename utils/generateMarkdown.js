@@ -61,9 +61,6 @@ ${data.usage}
 ## Contribution
 ${data.contribution}
 
-## Credits
-${data.credits}
-
 ## License
 ${licenseText}
 
