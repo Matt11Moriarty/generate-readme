@@ -88,7 +88,7 @@ inquirer.prompt(
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    let filePath = path.resolve(__dirname, fileName)
+    let filePath = path.resolve(`${__dirname}/new_readme`, fileName)
     fs.writeFile(filePath, data, err => {
         if (err) throw err;
         console.log('Saved!');
