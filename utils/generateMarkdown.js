@@ -12,10 +12,24 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
+  switch (data.license) {
+    case 'MIT':
+      licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+      break;
+    case 'Apache-2.0':
+      licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+      break;
+    case 'Boost Software License 1.0':
+      licenseBadge = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)'
+  }
+
   return `
   # ${data.title}
   ## Description
   ${data.description}
+
+  ${licenseBadge}
    
   ## Table of Contents:
 
@@ -49,7 +63,9 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ## Questions?
+  ${data.username}
 
+  If you have any questions, please feel free to email me at ${data.email}
 
 `;
 }

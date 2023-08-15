@@ -13,7 +13,9 @@ const questions = [
     "What is the usage information?",
     "What are the contribution guidelines?",
     "What are the test instructions?",
-    "What license are you using?"
+    "What license are you using?",
+    "Enter your Github username.",
+    "What is your email address?"
 ];
 
 inquirer.prompt(
@@ -62,19 +64,28 @@ inquirer.prompt(
                 "None",
                 "MIT",
                 "Apache-2.0",
-                "GNU GPLv3",
-                "BSD-3-Clause",
-                "ISC",
-                "Mozilla Public License 2.0"
+                "Boost Software License 1.0"
             ],
             validate: (value) => { return value ? true : 'Please select one of the options.' }
+        },
+        {
+            type: 'input',
+            message: questions[7],
+            name: 'username',
+            validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        },
+        {
+            type: 'input',
+            message: questions[8],
+            name: 'email',
+            validate: (value) => { return value ? true : 'I need a valid answer to continue' }
         }
     ]
   )
   .then((answers) => {
     console.log(answers);
     let markdownData = generateMarkdown.generateMarkdown(answers)
-    writeToFile('NewReadMe.md', markdownData);
+    writeToFile('newReadMe.md', markdownData);
   })
 //   .catch((error) => {
 //     if (error.isTtyError) {
