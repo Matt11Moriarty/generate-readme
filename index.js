@@ -53,7 +53,7 @@ inquirer.prompt(
         {
             type: 'input',
             message: questions[5],
-            name: 'test',
+            name: 'tests',
             validate: (value) => { return value ? true : 'I need a valid answer to continue' }
         },
         {

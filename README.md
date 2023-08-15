@@ -41,12 +41,13 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Resources:
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
+- Markdown Boxes: https://stackoverflow.com/questions/58737436/how-to-create-a-good-looking-notification-or-warning-box-in-github-flavoured-mar
+- Switch Statements: https://www.w3schools.com/js/js_switch.asp
+- Node path: https://nodejs.org/api/path.html
+- Inqiurer: https://www.npmjs.com/package/inquirer/v/8.2.4
+- Markdown hyperlinks: https://anvilproject.org/guides/content/creating-links
 ## License
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
