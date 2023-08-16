@@ -34,8 +34,10 @@ ${renderLicenseBadge(data.license)}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contributing](#contributing)
 ${renderLicenseLink(data.license)}
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -43,7 +45,7 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## Contribution
+## Contributing
 ${data.contribution}
 
 ${renderLicenseSection(data.license)}
