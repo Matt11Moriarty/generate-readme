@@ -26,6 +26,9 @@ In building this generator, I became very familiar with fundamenal Node.js conce
 N/A
 
 ## Usage
+
+Demo Recording: https://drive.google.com/file/d/1EQ9BiLkOEcco3qU6GnVj3caxnQd-MUk7/view
+
 1. Open an integrated developement terminal
 2. Initialize it using command `npm init`
 3. In the command line, run the command `node index.js`
