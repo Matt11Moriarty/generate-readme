@@ -4,6 +4,10 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const path = require('path');
 
+let validate = (val) => {
+    return val ? true : 'I need a valid answer to continue'
+}
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -11,37 +15,37 @@ const questions = [
         type: 'input',
         message: "What is the title?",
         name: 'title',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "Describe your application.",
         name: 'description',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "What are the installation instructions?",
         name: 'installation',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "What is the usage information?",
         name: 'usage',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "What are the contribution guidelines?",
         name: 'contribution',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "What are the test instructions?",
         name: 'tests',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'list',
@@ -80,19 +84,19 @@ const questions = [
                 }
             },
         ],
-        validate: (value) => { return value ? true : 'Please select one of the options.' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "Enter your Github username.",
         name: 'username',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     },
     {
         type: 'input',
         message: "What is your email address?",
         name: 'email',
-        validate: (value) => { return value ? true : 'I need a valid answer to continue' }
+        validate: (value) => validate(value)
     }
 ];
 
@@ -104,7 +108,7 @@ function writeToFile(fileName, data) {
     let filePath = path.resolve(`${__dirname}/new_readme`, fileName)
     fs.writeFile(filePath, data, err => {
         if (err) throw err;
-        console.log('Saved!');
+        console.log('Readme successfully generated 👍');
     }
     )
 }
@@ -115,17 +119,16 @@ function init() {
         questions
     )
         .then((answers) => {
-            console.log(answers);
             let markdownData = generateMarkdown(answers)
             writeToFile('newReadMe.md', markdownData);
         })
-        //   .catch((error) => {
-        //     if (error.isTtyError) {
-        //       console.log('Can\'t be rendered');
-        //     } else {
-        //       console.log('Something went wrong');
-        //     }
-        //   })
+          .catch((error) => {
+            if (error.isTtyError) {
+              console.log('Can\'t be rendered');
+            } else {
+              console.log('Something went wrong');
+            }
+          })
         ;
 }
 

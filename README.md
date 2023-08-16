@@ -7,11 +7,11 @@ Readme files can be time consuming to create manually, so by automating some of 
 
 In building this generator, I became very familiar with fundamenal Node.js concepts such as modularization, and leveraging npm's (fs and inquirer specifically).
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Readme Generator](#readme-generator)
   - [Description](#description)
-  - [Table of Contents (Optional)](#table-of-contents-optional)
+  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)

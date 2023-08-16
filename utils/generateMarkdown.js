@@ -52,7 +52,7 @@ ${renderLicenseSection(data.license)}
 ${data.tests}
 
 ## Questions?
-github: ${data.username}
+Github: ${data.username}
 
 If you have any questions, please feel free to email me at ${data.email}
 
