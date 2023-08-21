@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+//packages
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
@@ -8,8 +8,7 @@ let validate = (val) => {
     return val ? true : 'I need a valid answer to continue'
 }
 
-
-// TODO: Create an array of questions for user input
+//questions array used for inquirer 
 const questions = [
     {
         type: 'input',
@@ -103,7 +102,7 @@ const questions = [
 
 
 
-// TODO: Create a function to write README file
+//writeToFile function to generate README
 function writeToFile(fileName, data) {
     let filePath = path.resolve(`${__dirname}/new_readme`, fileName)
     fs.writeFile(filePath, data, err => {
@@ -113,7 +112,7 @@ function writeToFile(fileName, data) {
     )
 }
 
-// TODO: Create a function to initialize app
+//initializes the app and runs the inquirer function
 function init() {
     inquirer.prompt(
         questions
@@ -132,5 +131,4 @@ function init() {
         ;
 }
 
-// Function call to initialize app
 init();
