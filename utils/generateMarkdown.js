@@ -50,7 +50,7 @@ ${renderLicenseSection(data.license)}
 ${data.tests}
 
 ## Questions?
-Github: ${data.username}
+Github: [${data.username}](https://github.com/${data.username})
 
 If you have any questions, please feel free to email me at ${data.email}
 
